@@ -2,7 +2,7 @@
 
 ## Objective
 
-## Azure 
+## Setting up VMs on Azure
 
 I created two Virtual Machines (VMs), Windows and Linux, making sure that they are in the same region to allow them to be part of the same virtual network. Both machines boast 2 CPUs and some of the lowest prices I could find.
 Next, I opened them up so that they accept all traffic coming from the Internet. This can be done in the network security groups of the two machines by creating a rule that allows all traffic. Currently if traffic inbound from the Internet is not RDP, then it is evaluated by the next set of rules which can be seen until it is eventually denied if it doesn't pass them. I edited the Windows machine first. 
@@ -29,10 +29,21 @@ The same was done for the Linux machine. These machines were then quite vulnerab
 <br>
 <br>
 
-To gain a response back, I turned off the Windows firewall for the domain, public and private profiles. The pings returned a response from the Windows machine after that was done. Next I downloaded SQL Server to increase the attack surface, along with SQL Server Management Studio (SSMS) which lets you login into SQL Server. Whilst SSMS is not needed and one can use other methods to connect, SSMS has a nice UI unlike SSH for example. Once downloaded, I enabled logging for SQL Server to be ported into Windows Event Viewer with the help of this <a href="https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log?view=sql-server-ver16"> documentation</a>.
+To gain a response back, I turned off the Windows firewall for the domain, public and private profiles. The pings returned a response from the Windows machine after that was done. In the case of Linux, pinging should return a response without any changes. To make sure of this, I pinged the machine and used SSH to log into it, both of which were successful. 
 
+## Downloading SQL Server, SSMS, and setting up SQL Server logs in Event Viewer
 
+Next I downloaded SQL Server to increase the attack surface, along with SQL Server Management Studio (SSMS) which lets you login into SQL Server. Whilst SSMS is not needed and one can use other methods to connect, SSMS has a nice UI unlike SSH for example. Once downloaded, I enabled logging for SQL Server to be ported into Windows Event Viewer with the help of this <a href="https://learn.microsoft.com/en-us/sql/relational-databases/security/auditing/write-sql-server-audit-events-to-the-security-log?view=sql-server-ver16"> documentation</a>. Once connected, I made sure to enable logs of both successful and failed login attempts, as the default is failed attempts. To test this, I purposefully failed a login into SQL Server from SSMS and then made a successful login, and checked Event Viewer, selecting "Windows Logs" followed by "Application". A log of the failed attempt was clearly displayed:
 
+<img width="1304" alt="Screenshot 2024-09-12 at 23 00 31" src="https://github.com/user-attachments/assets/1a886040-d959-44ae-9697-306eafbe1c40">
+<br>
+<br>
+
+Followed by a log of the successful login afterwards:
+
+<img width="1299" alt="Screenshot 2024-09-12 at 23 03 19" src="https://github.com/user-attachments/assets/eff3ffb6-ae54-41f7-8c72-9148edb03632">
+<br>
+<br>
 
 
 
