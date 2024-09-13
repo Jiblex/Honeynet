@@ -1,4 +1,4 @@
-# HoneyNet
+# Implementing a SOC and Honeynet in Azure
 
 
 # Notes 
