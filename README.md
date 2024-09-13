@@ -4,7 +4,7 @@
 
 ## Setting up VMs on Azure
 
-I created two Virtual Machines (VMs), Windows and Linux, making sure that they are in the same region to allow them to be part of the same virtual network. Both machines boast 2 CPUs and some of the lowest prices I could find.
+I created two Virtual Machines (VMs), Windows (windows-vm) and Linux (linux-vm), making sure that they are in the same region to allow them to be part of the same virtual network. Both machines boast 2 CPUs and some of the lowest prices I could find.
 Next, I opened them up so that they accept all traffic coming from the Internet. This can be done in the network security groups of the two machines by creating a rule that allows all traffic. Currently if traffic inbound from the Internet is not RDP, then it is evaluated by the next set of rules which can be seen until it is eventually denied if it doesn't pass them. I edited the Windows machine first. 
 
 <img width="1792" alt="Screenshot 2024-09-12 at 20 40 57" src="https://github.com/user-attachments/assets/a47e8a23-36df-47c0-af05-a0af4ed15d52">
@@ -45,10 +45,21 @@ Followed by a log of the successful login afterwards:
 <br>
 <br>
 
+## Testing Logs with Attach VM
 
+To test I setup another Windows VM (attack-vm) in Central India, to simulate an attack coming from other regions. This was still being done in Azure, under a different resource group and virtual network. Once created, I logged into Remote Desktop Connection and attempted to log into windows-vm 3 times, using the username "Mr. Connect" and some random passwords. Needless to say, this failed. I then installed SSMS on attack-vm and attempted loging into SQL Server using the same username and, once again, random passwords 3 times. I then correctly login as well, to make sure that I could as well as to test again that the logs would reflect this as well. Before doing so however, I failed mutiple logins as I forgot to tick "Trust server certificate" under "Connection Security", creating a good few more logs. Not forgetting linux-vm, I attempted to SSH using the username "mrconnect". 
 
+Checking through both Windows and SQL Server logs I did find my failed attempts, though to my surprise, despite having the machines running for maybe 2 hours, there were already hundreds of login attempts from different users under various usernames. Attracting attention was certainly a success. 
 
+<img width="1296" alt="Screenshot 2024-09-13 at 17 06 13" src="https://github.com/user-attachments/assets/005b087a-98ae-43e2-94b8-a6c8d58eb8e3">
+<br>
+<br>
 
+The Linux machine logs were also eventful, but I could easily find my attempts while only filtering for "password":
+
+<img width="1168" alt="Screenshot 2024-09-13 at 17 26 22" src="https://github.com/user-attachments/assets/ebd8a241-3590-4386-b6a0-96976419a920">
+<br>
+<br>
 
 
 
