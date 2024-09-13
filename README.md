@@ -1,8 +1,11 @@
 # Implementing a SOC and Honeynet in Azure
 
+## Objective
+
 ## Azure 
 
-2 Vms created, in same region and same virtual network. Now must open them up so that they accept all traffic coming from the Internet. This can be done in the network security groups of the two machines by creating a rule that allows all traffic. Currently if traffic inbound from the Internet is not RDP, then it is evaluated by the next set of rules which can be seen until it is eventually denied if it doesn't pass them. 
+I created two Virtual Machines (VMs), Windows and Linux, making sure that they are in the same region to allow them to be part of the same virtual network. Both machines boast 2 CPUs and some of the lowest prices I could find.
+Next, I opened them up so that they accept all traffic coming from the Internet. This can be done in the network security groups of the two machines by creating a rule that allows all traffic. Currently if traffic inbound from the Internet is not RDP, then it is evaluated by the next set of rules which can be seen until it is eventually denied if it doesn't pass them. 
 
 <img width="1792" alt="Screenshot 2024-09-12 at 20 40 57" src="https://github.com/user-attachments/assets/a47e8a23-36df-47c0-af05-a0af4ed15d52">
 <br>
