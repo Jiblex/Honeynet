@@ -1,4 +1,4 @@
-# Implementing a SOC and Honeynet in Azure
+# Implementing a Cloud SOC and Honeynet in Azure
 
 ## Objective
 
@@ -61,11 +61,19 @@ The Linux machine logs were also eventful, but I could easily find my attempts w
 <br>
 <br>
 
+## Setting up SIEM (Microsoft Sentinel)
 
+The next step in this project was to setup a SIEM, however first I needed to have the logs congregate in the same place, a central log repository. On Azure this can be achieved through a Log Analytics Workspace. Once the Log Analytics Workspace had been made, I created Sentinel and added the workspace to it, thereby connecting the two. I then created a watchlist named "geoip", using a csv file with IP range to location matches, to make it possible for Sentinel to show where connections were coming from. 
 
+<img width="1792" alt="Screenshot 2024-09-13 at 19 39 27" src="https://github.com/user-attachments/assets/19dded34-a50f-49e4-bd23-4b0992e1e552">
+<br>
+<br>
 
+I then enabled Microsoft Defender for Cloud for servers and SQL servers on machines, then changing the subscription settings to have continuous export of all data types to the log analytics workspace. This was done because Microsoft Defender will allow for log forwarding from the virtual machines into the log analytics workspace. 
 
-
+<img width="1792" alt="Screenshot 2024-09-13 at 20 53 54" src="https://github.com/user-attachments/assets/9838a94d-099c-4db3-801e-3e5b7521c407">
+<br>
+<br>
 
 
 
