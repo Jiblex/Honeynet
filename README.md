@@ -43,15 +43,36 @@ After hardening, NSGs were reconfigured to block all traffic that did not come f
 
 ## Attack Maps Before Hardening 
 
+### inux-ssh-auth-fail
+<img width="968" alt="linux-ssh-auth-fail" src="https://github.com/user-attachments/assets/a4180aac-b2ad-4547-b33b-daa8e4c3c6ac">
+<br>
+<br>
+
+### mssql-auth-fail
+<img width="1021" alt="mssql-auth-fail" src="https://github.com/user-attachments/assets/247cf2c2-78bf-4f1f-bf83-35ac8a44272a">
+<br>
+<br>
+
+### nsg-malicious-allowed-in
+<img width="1229" alt="nsg-malicious-allowed-in" src="https://github.com/user-attachments/assets/55e5ec92-4bc2-4cc5-81ee-d07992b845f0">
+<br>
+<br>
+
+### windows-rdp-auth-fail
+<img width="992" alt="windows-rdp-auth-fail" src="https://github.com/user-attachments/assets/fe13154b-56af-46a2-85cb-82f8ec47b5bd">
+<br>
+<br>
+
+
 ## Metrics Before Hardening
 
 | Metric | Count |
 |----------|----------|
-| Security Event |  |
-| Syslog |  |
-| SecurityAlert |  |
-| SecurityIncident |  |
-| AzureNetworkAnalytics_CL |  |
+| Security Event | 496500 |
+| Syslog | 4186 |
+| SecurityAlert | 1 |
+| SecurityIncident | 278 |
+| AzureNetworkAnalytics_CL | 4212 |
 
 ## Attack Maps After Hardening
 
