@@ -30,6 +30,8 @@ As can be seen in the diagram above, the architecture consists of the following 
 <br>
 <br>
 
+Before hardening all resources deployed were exposed to the public Internet, with the VMs having their NSGs configured to let in all traffic (firewalls were also wide open), and all other resources had public endpoints (no private endpoints) visible to anyone on the Internet.
+
 ### The following diagram shows the architecture AFTER hardening (security control):
 
 <img width="1132" alt="Screenshot 2024-09-24 at 00 07 13" src="https://github.com/user-attachments/assets/c144aed1-5a32-4327-875d-256f3be95aa4">
@@ -37,3 +39,6 @@ As can be seen in the diagram above, the architecture consists of the following 
 <br>
 <br>
 
+After hardening, NSGs were reconfigured to block all traffic that did not come from the admin workstation. All other resouces were protected by their firewalls and Private Endpoint. 
+
+## Attach Maps 
