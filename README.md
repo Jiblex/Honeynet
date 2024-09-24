@@ -41,4 +41,28 @@ Before hardening all resources deployed were exposed to the public Internet, wit
 
 After hardening, NSGs were reconfigured to block all traffic that did not come from the admin workstation. All other resources were protected by their firewalls and their private endpoints.
 
-## Attack Maps 
+## Attack Maps Before Hardening 
+
+## Metrics Before Hardening
+
+| Metric | Count |
+|----------|----------|
+| Security Event |  |
+| Syslog |  |
+| SecurityAlert |  |
+| SecurityIncident |  |
+| AzureNetworkAnalytics_CL |  |
+
+## Attack Maps After Hardening
+
+## Metrics After Hardening
+
+| Metric | Count |
+|----------|----------|
+| Security Event |  |
+| Syslog |  |
+| SecurityAlert |  |
+| SecurityIncident |  |
+| AzureNetworkAnalytics_CL |  |
+
+## Conclusion
