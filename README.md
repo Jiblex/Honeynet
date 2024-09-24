@@ -1,6 +1,6 @@
 # Implementing a Cloud SOC and Honeynet in Azure
 
-In this project, I set up a small honeynet in Azure and ingested log sources from various resources into Azure's Log Analytics workspace, which was then utilized by Microsoft Sentinel to create attack maps, trigger alerts, and generate incidents. I measured a few security metrics in the unprotected environment over a 24-hour period, hardened the environment by applying some security controls, and then collected the same security metrics 24 hours later to compare security performance. The results are shown below, highlighting the following metrics:
+In this project, I set up a small honeynet in Azure and ingested log sources from various resources into Azure's Log Analytics Workspace, which was then utilized by Microsoft Sentinel to create attack maps, trigger alerts, and generate incidents. I measured some security metrics in the unprotected environment over a 24-hour period, hardened the environment by applying security controls, and then collected the same security metrics 24 hours later to compare security performance. The results are shown below, highlighting the following metrics:
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Alerts triggered in Log Analytics)
@@ -14,9 +14,9 @@ In this project, I set up a small honeynet in Azure and ingested log sources fro
 <br>
 <br>
 
-As can be seen in the diagram above, the architecture consists of the following components:
+As shown in the diagram above, the architecture consists of the following components:
 - Virtual Network (VNet)
-- Virtual Machines (2 windows, 1 linux)
+- Virtual Machines (2 Windows, 1 Linux)
 - Network Security Groups (NSGs)
 - Azure Key Vault
 - Azure Storage Account (Blob Storage)
@@ -39,6 +39,6 @@ Before hardening all resources deployed were exposed to the public Internet, wit
 <br>
 <br>
 
-After hardening, NSGs were reconfigured to block all traffic that did not come from the admin workstation. All other resouces were protected by their firewalls and Private Endpoint. 
+After hardening, NSGs were reconfigured to block all traffic that did not come from the admin workstation. All other resources were protected by their firewalls and their private endpoints.
 
 ## Attack Maps 
