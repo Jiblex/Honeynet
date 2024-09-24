@@ -41,4 +41,4 @@ Before hardening all resources deployed were exposed to the public Internet, wit
 
 After hardening, NSGs were reconfigured to block all traffic that did not come from the admin workstation. All other resouces were protected by their firewalls and Private Endpoint. 
 
-## Attach Maps 
+## Attack Maps 
