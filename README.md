@@ -1,6 +1,6 @@
 # Implementing a Cloud SOC and Honeynet in Azure
 
-In this project, I set up a small honeynet in Azure and ingested log sources from various resources into Azure's Log Analytics Workspace, which was then utilized by Microsoft Sentinel to create attack maps, trigger alerts, and generate incidents. I measured some security metrics in the unprotected environment over a 24-hour period, hardened the environment by applying security controls, and then collected the same security metrics 24 hours later to compare security performance. The results are shown below, highlighting the following metrics:
+In this project, I set up a small honeynet in Azure and ingested log sources from various resources into Azure's Log Analytics Workspace, which was then utilized by Microsoft Sentinel to create attack maps, trigger alerts, and generate incidents which were delt with in accordance to NIST 800-61. I measured some security metrics in the unprotected environment over a 24-hour period, hardened the environment by applying security controls in accordance to NIST 800-53: SC-7, and then collected the same security metrics 24 hours later to compare security performance. The results are shown below, highlighting the following metrics:
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
 - SecurityAlert (Alerts triggered in Log Analytics)
