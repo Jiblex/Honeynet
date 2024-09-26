@@ -100,3 +100,8 @@ After completing the metric count before hardening, Azure Sentinel had mutiple i
 
 
 ## Conclusion
+
+This project involved having a small honeynet built in Azure where log sources were integrated into Azure's Log Analytics Workspace. Azure Sentinel was then used to ingest the logs and, based on custom analytics rules, trigger alerts creating security incidents. The honeynet envrionment was used to gather metrics for 24 hours, after which the environment was locked down using security controls in accordance to NIST 800-53: SC-7, showing a substantial reduction in metrics showing how effective the security controls are. 
+
+It should be noted that the resources were not actively used during this period, had there been more users actively utilizing the resources during the 24 hour period it is likely that more events and alerts would have been generated. 
+
