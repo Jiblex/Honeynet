@@ -76,14 +76,27 @@ After hardening, NSGs were reconfigured to block all traffic that did not come f
 
 ## Attack Maps After Hardening
 
+The maps were empty as the KQL queries returned no results after hardening the environment. 
+
 ## Metrics After Hardening
 
 | Metric | Count |
 |----------|----------|
-| Security Event |  |
-| Syslog |  |
-| SecurityAlert |  |
-| SecurityIncident |  |
-| AzureNetworkAnalytics_CL |  |
+| Security Event | 18767 |
+| Syslog | 0 |
+| SecurityAlert | 0 |
+| SecurityIncident | 0 |
+| AzureNetworkAnalytics_CL | 0 |
+
+## Incident Response
+
+After completing the metric count before hardening, Azure Sentinel had mutiple incidents that needed handeling. I reviewed the incidents according to the NIST 800-61 computer security incident handling guide. For each incident I:
+
+- reviewed the detection confirming that it was indeed a security incident, conducting analysis to determine the scope and impact of the incident.
+- Contained the incident, eradicated the root cause by implementing appropriate security controls and recovering affected systems (if applicable).
+- Conducted post-mortem analysis to identify areas of improvement.
+
+<img width="1053" alt="Screenshot 2024-09-26 at 13 22 55" src="https://github.com/user-attachments/assets/d4075d5a-ccb1-486a-a78f-664ad597cb2f">
+
 
 ## Conclusion
